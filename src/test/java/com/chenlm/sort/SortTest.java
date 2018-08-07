@@ -54,4 +54,25 @@ public class SortTest {
         MergeSortBU.sort(integers);
         assertTrue(SortTestHelper.isSorted(integers));
     }
+
+    @Test
+    public void QuickSort() {
+        Integer[] integers = SortTestHelper.generateRandomArray(200, 0, 100);
+        QuickSort.sort(integers);
+        assertTrue(SortTestHelper.isSorted(integers));
+    }
+
+    @Test
+    public void QuickSort2Ways() {
+        Integer[] integers = SortTestHelper.generateRandomArray(200000, 0, 10);
+        QuickSort2Ways.sort(integers);
+        assertTrue(SortTestHelper.isSorted(integers));
+    }
+
+    @Test
+    public void QuickSort3Ways() {
+        Integer[] integers = SortTestHelper.generateRandomArray(200000, 0, 10);
+        QuickSort3Ways.sort(integers);
+        assertTrue(SortTestHelper.isSorted(integers));
+    }
 }
