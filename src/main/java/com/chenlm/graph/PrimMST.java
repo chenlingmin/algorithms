@@ -2,6 +2,7 @@ package com.chenlm.graph;
 
 import java.util.Vector;
 
+// O( ElogV)
 // 使用优化的Prim算法求图的最小生成树
 public class PrimMST<Weight extends Number & Comparable> {
 

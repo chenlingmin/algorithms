@@ -2,6 +2,7 @@ package com.chenlm.graph;
 
 import java.util.Vector;
 
+// O( ElogE)
 public class LazyPrimMST<Weight extends Number & Comparable> {
 
     private WeightedGraph<Weight> g;  // 图
@@ -37,7 +38,7 @@ public class LazyPrimMST<Weight extends Number & Comparable> {
         }
 
         mstWeight = mst.elementAt(0).wt();
-        for( int i = 1 ; i < mst.size() ; i ++ )
+        for (int i = 1; i < mst.size(); i++)
             mstWeight = mstWeight.doubleValue() + mst.elementAt(i).wt().doubleValue();
     }
 
