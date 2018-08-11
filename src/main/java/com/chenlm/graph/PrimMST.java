@@ -6,7 +6,7 @@ import java.util.Vector;
 // 使用优化的Prim算法求图的最小生成树
 public class PrimMST<Weight extends Number & Comparable> {
 
-    private WeightedGraph g;              // 图的引用
+    private WeightedGraph<Weight> g;              // 图的引用
     private IndexMinHeap<Weight> ipq;     // 最小索引堆, 算法辅助数据结构
     private Edge<Weight>[] edgeTo;        // 访问的点所对应的边, 算法辅助数据结构
     private boolean[] marked;             // 标记数组, 在算法运行过程中标记节点i是否被访问
@@ -48,8 +48,7 @@ public class PrimMST<Weight extends Number & Comparable> {
         assert !marked[v];
         marked[v] = true;
 
-        for (Object item : g.adj(v)) {
-            Edge<Weight> e = (Edge<Weight>) item;
+        for (Edge<Weight> e : g.adj(v)) {
             int w = e.other(v);
             if (!marked[w]) {
                 if (edgeTo[w] == null) {
